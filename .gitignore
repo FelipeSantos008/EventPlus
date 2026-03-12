@@ -1,0 +1,6 @@
+# Pastas do Visual Studio
+.vs/
+
+# Pastas de Build (Compilação)
+bin/
+obj/
