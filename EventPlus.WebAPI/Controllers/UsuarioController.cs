@@ -44,7 +44,7 @@ public class UsuarioController : ControllerBase
         try
         {
             _usuarioRepository.Cadastrar(usuario);
-            return StatusCode(201, usuario);
+            return StatusCode(201);
         }
         catch (Exception error)
         {
