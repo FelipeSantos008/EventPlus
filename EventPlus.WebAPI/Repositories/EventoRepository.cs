@@ -16,7 +16,7 @@ public class EventoRepository : IEventoRepository
     /// Metodo de atualizar um Evento usando o rastreamento automatico
     /// </summary>
     /// <param name="id">id de evento a ser atualizado</param>
-    /// <param name="evento">Novos dados do evento</param>
+    /// <param nam  e="evento">Novos dados do evento</param>
     public void Atualizar(Guid id, Evento evento)
     {
         var eventoBuscado = _context.Eventos.Find(id);

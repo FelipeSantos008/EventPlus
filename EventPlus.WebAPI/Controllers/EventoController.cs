@@ -50,19 +50,27 @@ public class EventoController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Endpoint da API que faz chamada para o metodo de cadastrar um evento
+    /// </summary>
+    /// <param name="eventoDTO">envento a ser cadastrado</param>
+    /// <returns>Status code 201</returns>
     [HttpPost]
-    public IActionResult Cadastrar(Evento evento)
+    public IActionResult Cadastrar(EventoDTO eventoDTO)
     {
         var novoEvento = new Evento
         {
-            //IdEvento = Guid.NewGuid(),
-            Nome = evento.Nome,
-            DataEvento = evento.DataEvento,
-            Descricao = evento.Descricao
+            IdEvento = Guid.NewGuid(),
+            Nome = eventoDTO.Nome!,
+            DataEvento = eventoDTO.DataEvento,
+            Descricao = eventoDTO.Descricao!,
+            IdTipoEvento = eventoDTO.IdTipoEvento,
+            IdInstituicao = eventoDTO.IdInstituicao
+
         };
         try
         {
-            _eventoRepository.Cadastrar(evento);
+            _eventoRepository.Cadastrar(novoEvento);
             return StatusCode(201);
         }
         catch (Exception error)
@@ -71,6 +79,12 @@ public class EventoController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Endpoint da API que chama o metodo de atualizar um evento
+    /// </summary>
+    /// <param name="id">id de evento</param>
+    /// <param name="evento"> evento com os dados atualizados</param>
+    /// <returns>Status code 204 e evento atualizado</returns>
     [HttpPut("{id}")]
     public IActionResult Atualiazar(Guid id, EventoDTO evento)
     {
@@ -90,6 +104,12 @@ public class EventoController : ControllerBase
             return BadRequest(error.Message);
         }
     }
+
+    /// <summary>
+    /// Chama o metodo de deletar um evento
+    /// </summary>
+    /// <param name="id">evento a ser excluido</param>
+    /// <returns>status code 204</returns>
      [HttpDelete("{id}")]
      public IActionResult Deletar(Guid id)
      {

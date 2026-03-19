@@ -38,8 +38,9 @@ public class LoginController : ControllerBase
             {
                 //formato da claim
                 new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
-
                 new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email!),
+                new Claim(JwtRegisteredClaimNames.Name, usuarioBuscado.Nome!),
+                new Claim(ClaimTypes.Role, usuarioBuscado.IdTipoUsuarioNavigation!.Titulo!),
 
                 //existe a possibilidade de criar uma claim personalizada
                 //new Claim("Claim Personalizada", "Valor da claim personalizada")
