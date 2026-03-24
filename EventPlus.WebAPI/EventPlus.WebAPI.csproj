@@ -11,7 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Azure.AI.ContentSafety" Version="1.0.0" />
+=======
+>>>>>>> f44c4e2eab0f3fcc6218a1b20b84426e473bf849
     <PackageReference Include="BCrypt.Net-Next" Version="4.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.3" />

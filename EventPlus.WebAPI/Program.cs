@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 using Azure.AI.ContentSafety;
+=======
+>>>>>>> f44c4e2eab0f3fcc6218a1b20b84426e473bf849
 using EventPlus.WebAPI;
 using EventPlus.WebAPI.BdContextEvent;
 using EventPlus.WebAPI.Interfaces;
@@ -10,12 +13,15 @@ using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
+<<<<<<< HEAD
 var endpoint = "";
 var apiKey = "";
 var client = new ContentSafetyClient(new Uri(endpoint), new Azure.AzureKeyCredential(apiKey));
 
 builder.Services.AddSingleton(client);
 
+=======
+>>>>>>> f44c4e2eab0f3fcc6218a1b20b84426e473bf849
 builder.Services.AddDbContext<EventContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddControllers();
@@ -29,7 +35,10 @@ builder.Services.AddScoped<IInstituicaoRepository, InstituicaoRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IEventoRepository, EventoRepository>();
 builder.Services.AddScoped<IPresencaRepository, PresencaRepository>();
+<<<<<<< HEAD
 builder.Services.AddScoped<IComentarioEventoRepository, ComentarioEventoRepository>();
+=======
+>>>>>>> f44c4e2eab0f3fcc6218a1b20b84426e473bf849
 
 //Adiciona serviço de Jwt Bearer (forma de autenticação)
 builder.Services.AddAuthentication(options =>
@@ -64,7 +73,10 @@ builder.Services.AddAuthentication(options =>
          ValidAudience = "api_EventPlus"
      };
  });
+<<<<<<< HEAD
 
+=======
+>>>>>>> f44c4e2eab0f3fcc6218a1b20b84426e473bf849
 //Adiciona o swagger
 builder.Services.AddEndpointsApiExplorer();
 

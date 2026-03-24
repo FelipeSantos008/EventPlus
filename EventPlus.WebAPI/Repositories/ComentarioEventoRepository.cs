@@ -44,9 +44,16 @@ public class ComentarioEventoRepository : IComentarioEventoRepository
 
     public List<ComentarioEvento> ListarSomenteExibe(Guid IdEvento)
     {
+<<<<<<< HEAD
     
         return _eventContext.ComentarioEventos
             .OrderBy(ComentarioEvento => ComentarioEvento.Exibe)
             .ToList();
 }
+=======
+        return _eventContext.ComentarioEventos
+            .OrderBy(ComentarioEvento => ComentarioEvento.Exibe)
+            .ToList();
+    }
+>>>>>>> f44c4e2eab0f3fcc6218a1b20b84426e473bf849
 }

@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 ﻿using Azure;
 using Azure.AI.ContentSafety;
 using EventPlus.WebAPI.DTO;
 using EventPlus.WebAPI.Interfaces;
 using EventPlus.WebAPI.Models;
 using EventPlus.WebAPI.Repositories;
+=======
+﻿using EventPlus.WebAPI.Interfaces;
+>>>>>>> f44c4e2eab0f3fcc6218a1b20b84426e473bf849
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +17,7 @@ namespace EventPlus.WebAPI.Controllers;
 [ApiController]
 public class ComentarioEventoController : ControllerBase
 {
+<<<<<<< HEAD
     private readonly ContentSafetyClient _contentSafetyClient;
     private readonly IComentarioEventoRepository _comentarioEventoRepository;
 
@@ -122,3 +127,13 @@ public class ComentarioEventoController : ControllerBase
 
 
 
+=======
+    private readonly IComentarioEventoRepository _comentarioEventoRepository;
+    public ComentarioEventoController(IComentarioEventoRepository comentarioEventoRepository)
+    {
+        _comentarioEventoRepository = comentarioEventoRepository;
+    }
+
+
+}
+>>>>>>> f44c4e2eab0f3fcc6218a1b20b84426e473bf849

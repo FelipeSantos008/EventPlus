@@ -47,7 +47,11 @@ public class PresencaController : ControllerBase
         catch (Exception erro)
         {
             return BadRequest(erro.Message);
+<<<<<<< HEAD
         }   
+=======
+        }
+>>>>>>> f44c4e2eab0f3fcc6218a1b20b84426e473bf849
     }
 
     /// <summary>
